@@ -64,7 +64,7 @@ export default function Login() {
                 return r;
             })
             .then((data) => {
-                if (data && data.error) {
+                if (data && data.status === 404) {
                     // setLoginError(data.message);
                     setLoginError('Username or password are incorrect');
                 } else {

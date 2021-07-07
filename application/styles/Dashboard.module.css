@@ -6,7 +6,7 @@
     padding: 30px;
     box-sizing: border-box;
 }
-.card-add {
+.cardadd {
     margin: 0% 0% 0% 1%;
     background: #ffffff;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 1076px) {
-    .card-add {
+    .cardadd {
         margin: 0% 0% 0% 0%;
         background: #ffffff;
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -31,10 +31,10 @@
         box-sizing: border-box;
     }
 }
-.container-chart {
+.containerchart {
     padding: 0px 30px;
 }
-.card-chart {
+.cardchart {
     margin: 0% 10% auto;
     box-sizing: border-box;
     border-radius: 5px;
@@ -42,7 +42,7 @@
 }
 
 @media screen and (max-width: 1350px) {
-    .card-chart {
+    .cardchart {
         margin: 0% 1% auto;
         box-sizing: border-box;
         border-radius: 5px;
@@ -53,7 +53,7 @@
     }
 }
 @media screen and (max-width: 675px) {
-    .card-table {
+    .cardtable {
         display: none;
     }
     .row {
@@ -72,13 +72,13 @@
     display: table;
 }
 
-[class*="col-"] {
-    float: left;
+/*[class*="col-"] {*/
+/*    float: left;*/
 
-}
-[class*="col-"] {
-    width: 100%;
-}
+/*}*/
+/*[class*="col-"] {*/
+/*    width: 100%;*/
+/*}*/
 
 /* @media only screen and (min-width: 600px) { */
 @media only screen and (max-width: 760px),
