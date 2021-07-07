@@ -4,6 +4,7 @@ import styles from '/styles/Table.module.css';
 export default function TableDevice(props) {
     const data = props.data;
     const columns = props.columns;
+
     return (
         <table className={styles.table}>
             <thead className={styles.thead}>

@@ -16,12 +16,15 @@ function Dashboard(props) {
     // useEffect(() => {
     //     setDataDevice(...props.data);
     // })
-
+    const component = <>
+        <TableDevice columns={columns} data={props.data}/>
+        <Chart data={props.data} name={'Chart'}/>
+    </>
     return (
         <>
-            {/*<Navigator/>*/}
-            <TableDevice columns={columns} data={props.data}/>
-            <Chart data={props.data} name={'Chart'}/>
+            <Navigator component={component} active={'Dashboard'}/>
+            {/*<TableDevice columns={columns} data={props.data}/>*/}
+            {/*<Chart data={props.data} name={'Chart'}/>*/}
         </>
     );
 }

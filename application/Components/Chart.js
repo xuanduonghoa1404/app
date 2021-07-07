@@ -26,9 +26,9 @@ function Chart(props) {
             }]
         })
     }
-    useEffect(() => {
-        chart();
-    })
+    // useEffect(() => {
+    //     chart();
+    // })
     return (
         <div>
             <h2>{props.name}</h2>

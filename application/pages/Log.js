@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import Router from 'next/router';
 import TableDevice from "../Components/TableDevice";
+import TableLog from "../Components/TableLog";
 import fetch from "isomorphic-unfetch";
+import Navigator from "../Components/Navigator";
 function Log(props) {
     const columns = [
         {id: 1, title: "Device ID", accessor: "device_id"},
@@ -10,10 +12,13 @@ function Log(props) {
         {id: 4, title: "Date", accessor: "date"},
     ];
 
+    const component = <>
+        {/*<Navigator/>*/}
+        <TableLog columns={columns} data={props.data}/>
+    </>
     return (
         <>
-            {/*<Navigator/>*/}
-            <TableDevice columns={columns} data={props.data}/>
+            <Navigator component={component} active={'Log'}/>
         </>
     );
 }
