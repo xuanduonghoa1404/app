@@ -36,10 +36,10 @@ export default function AddDevice(props) {
                     // setLoginError(data.message);
                     setAddError('Please try again');
                 } else {
+                    props.getData()
                     Router.push('Dashboard');
                 }
             });
-        props.getData()
     }, [name, mac, ip, power]);
 
     return (

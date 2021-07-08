@@ -25,6 +25,7 @@ function Dashboard(props) {
     async function addDevice() {
         const res = await fetch('http://localhost:3002/device')
         const data = await res.json();
+        console.log(data)
         let total = 0;
         let xValues = []
         let yValues = []
@@ -44,7 +45,7 @@ function Dashboard(props) {
         setXValues(...xValues)
         setYValues(...yValues)
         setColor(...color)
-        setDataDevice(...data)
+        setDataDevice(data)
     }
 
     // let total= 0;
@@ -66,9 +67,9 @@ function Dashboard(props) {
     const componentChart = <>
         <div className={styleDashboard.cardChart}>
             <div className={styleDashboard.row}>
-                <div className={styleDashboard.col6 + ' ' + styleDashboard.colS12}>
-                    <Chart data={dataDevice} xValues={xValues} yValues={yValues} color={color}/>
-                </div>
+                {/*<div className={styleDashboard.col6 + ' ' + styleDashboard.colS12}>*/}
+                {/*    <Chart data={dataDevice} xValues={xValues} yValues={yValues} color={color}/>*/}
+                {/*</div>*/}
                 <div className={styleDashboard.col6 + ' ' + styleDashboard.colS12}>
                     <AddDevice getData={addDevice}/>
                 </div>

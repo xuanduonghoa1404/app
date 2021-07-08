@@ -67,6 +67,7 @@ deviceRouter.get('/', '/', (ctx) => {
             let dataJSON = JSON.parse(data);
             dataJSON.push(device);
             fs.writeFileSync('./data/device.json', JSON.stringify(dataJSON))
+            ctx.body = dataJSON;
         } catch (e) {
             console.log("Error update data");
         }
