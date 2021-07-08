@@ -43,14 +43,37 @@ const deviceRouter = new Router({prefix: '/device'});
 deviceRouter.get('/', '/', (ctx) => {
     let data = fs.readFileSync('./data/device.json', 'utf8')
     ctx.body = JSON.parse(data);
-});
-// const logRouter = new Router({prefix: '/log'});
-// logRouter.get('/', '/', (ctx) => {
-//     ctx.body = {
-//         name: 'TV',
-//         id: '1234'
-//     }
-// });
+})
+    .post('/', async (ctx, next) => {
+        // handle your post request here
+        try {
+            let date_ob = new Date();
+            let day = ("0" + date_ob.getDate()).slice(-2);
+            let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+            let year = date_ob.getFullYear();
+            let name = ctx.request.body["name"];
+            let mac = ctx.request.body["mac"];
+            let ip = ctx.request.body["ip"];
+            let date = day + "-" + month + "-" + year;
+            let power = ctx.request.body["power"];
+            let device = {
+                name: name,
+                mac: mac,
+                ip: ip,
+                date: date,
+                power: power
+            }
+            let data = fs.readFileSync('./data/device.json', 'utf8')
+            let dataJSON = JSON.parse(data);
+            dataJSON.push(device);
+            fs.writeFileSync('./data/device.json', JSON.stringify(dataJSON))
+        } catch (e) {
+            console.log("Error update data");
+        }
+
+    })
+;
+
 app.use(logRouter.routes())
     .use(logRouter.allowedMethods());
 app.use(deviceRouter.routes())

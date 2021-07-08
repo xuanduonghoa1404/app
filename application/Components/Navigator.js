@@ -5,7 +5,7 @@ import {faCog, faHistory, faHome} from "@fortawesome/free-solid-svg-icons";
 import ActiveLink from "./ActiveLink";
 import {useRouter} from 'next/router'
 import Head from "next/head";
-
+import styleDashboard from '../styles/Dashboard.module.css'
 export default function Navigator(props) {
     const [nav, setNav] = useState('');
     const [hidden, setHidden] = useState(false);
@@ -74,6 +74,9 @@ export default function Navigator(props) {
                 </div>
                 <div className={styles.container}>
                     {props.component}
+                </div>
+                <div  className={styleDashboard.containerChart}>
+                    {props.componentChart}
                 </div>
             </div>
         </div>
